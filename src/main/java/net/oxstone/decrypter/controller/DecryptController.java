@@ -40,8 +40,9 @@ public class DecryptController {
                 outStream.write(fileBytes, 0, bytesNumber);
             } else {
                 log.info("Decryption of the requested file has been completed.");
-                outStream.close();
             }
+
+            outStream.close();
 
             return ResponseEntity.ok().body("File decryption succeed.");
         } catch (IOException e) {
